@@ -13,7 +13,7 @@ module USPS::Request
       def config(options = {})
         @api = options[:api].to_s
         @tag = options[:tag].to_s
-        @secure = !!options[:secure]
+        @secure = !!options[:secure] || ENV['USPS_SECURE_ONLY']
         @response = options[:response]
       end
     end
